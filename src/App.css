@@ -1,0 +1,82 @@
+/* ============================== */
+.content-body {
+    background-color: #ffd1dc;
+    background-image: url("./assets/valentines-day-poster.webp");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+}
+
+/* ============================== */
+
+.top-seller-container {
+    border: solid 1px #CCCDCE;
+    background-color: white;
+}
+
+/* ============================== */
+
+.card-container-product {
+    border-radius: 30px;
+}
+
+.card-thumbnail-product {
+    border-radius: 30px;
+}
+
+.card-container-banner {
+    border-radius: 10px;
+}
+
+.card-title-banner {
+    height: 10%;
+    font-size: 1em;
+    font-weight: bold;
+    height: 60px;
+}
+
+.card-body-banner {
+    height: 85%;
+}
+
+.card-link-banner {
+    width: 100%;
+    font-size: 0.8em;
+}
+
+/* ============================== */
+
+.carousel-indicators {
+    display: none;
+}
+
+/* ============================== */
+
+.pre-footer-container {
+    background-color: #37475a;
+}
+
+.pre-footer-button {
+    background-color: #D63585;
+    border: none;
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pre-footer-button:hover {
+    background-color: #485769;
+}
+
+/* ============================== */
+
+.footer-text-links {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-text-links:hover {
+    text-decoration: underline;
+}
+
+/* ============================== */
