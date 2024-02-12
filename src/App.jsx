@@ -42,11 +42,11 @@ function RenderLanguageDropdown() {
 
   return (
     <Dropdown onSelect={handleSelect} className="d-flex justify-content-center me-2">
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      <Dropdown.Toggle id="dropdown-basic" className="dropdown-options-container">
         {selectedItem}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="dropdown-options-container">
         <Dropdown.Item eventKey="EN" active={selectedItem === "EN"}>
           EN
         </Dropdown.Item>
@@ -77,11 +77,11 @@ function RenderCurrencyDropdown() {
 
   return (
     <Dropdown onSelect={handleSelect} className="d-flex justify-content-center me-2">
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      <Dropdown.Toggle id="dropdown-basic" className="dropdown-options-container">
         {selectedItem}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="dropdown-options-container">
         <Dropdown.Item eventKey="USD ($) - U.S. Dollar" active={selectedItem === "USD ($) - U.S. Dollar"}>
           USD ($) - U.S. Dollar
         </Dropdown.Item>
@@ -109,11 +109,11 @@ function RenderCountryDropdown() {
 
   return (
     <Dropdown onSelect={handleSelect} className="d-flex justify-content-center me-2">
-      <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+      <Dropdown.Toggle id="dropdown-basic" className="dropdown-options-container">
         {selectedItem}
       </Dropdown.Toggle>
 
-      <Dropdown.Menu>
+      <Dropdown.Menu className="dropdown-options-container">
         <Dropdown.Item eventKey="United States" active={selectedItem === "United States"}>
           United States
         </Dropdown.Item>
@@ -141,12 +141,13 @@ function RenderNavPanel() {
   };
 
   return (
-    <Container fluid className="w-100 bg-dark rounded">
+    <Container fluid className="w-100 header-container rounded">
       <Navbar expand="lg">
         <Container fluid className="d-flex align-items-start">
           <Navbar.Brand href="#home">
             <Image src={new URL("./assets/logo.webp", import.meta.url).href} width="85px" />
           </Navbar.Brand>
+
           <div className="d-flex" style={{ width: "50vw" }}>
             <Form.Control type="query-item-name" id="query-item-name" className="me-2" style={{ minWidth: "30%" }}
               placeholder="Search item name here" aria-describedby="item-search"
@@ -154,17 +155,14 @@ function RenderNavPanel() {
             {RenderLanguageDropdown()}
           </div>
 
-          <div>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="d-flex justify-content-center me-auto">
-                <Nav.Link href="#orders">Orders</Nav.Link>
-                <Nav.Link href="#cart">Cart</Nav.Link>
-                <Nav.Link href="#logout">Logout</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </div>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#orders" className="text-links-button">Orders</Nav.Link>
+              <Nav.Link href="#cart" className="text-links-button">Cart</Nav.Link>
+              <Nav.Link href="#logout" className="text-links-button">Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container >
       </Navbar >
     </Container>
@@ -202,10 +200,10 @@ function RenderProductGrid() {
               </Card.Text>
             </div>
 
-            <hr className="border-2 text-dark" />
+            <hr className="border-2 horizontal-line-text" />
 
             <div className="d-flex flex-column align-items-center">
-              <Button variant="primary" className="card-cart-button">Add to Cart</Button>
+              <Button className="card-cart-button-product">Add to Cart</Button>
             </div>
           </Card.Body>
         </Card>
@@ -232,7 +230,7 @@ function RenderPromotionBannerGrid(promoList, suffix) {
           </Card.Body>
 
           <Card.Body className="d-flex flex-column align-items-start justify-content-center card-body-banner w-100 px-0">
-            <Button variant="link" className="card-link-banner text-decoration-none text-start">{promoItem.buttonDescription}</Button>
+            <Button variant="link" className="card-link-banner text-links-banner-button text-start">{promoItem.buttonDescription}</Button>
           </Card.Body>
         </Card>
       </Col >
@@ -293,8 +291,8 @@ function RenderFooter() {
     <Container fluid className="pt-5">
       {/* Footer Glossary Section */}
       <Row className="justify-content-center">
-        <Col className="col-2">
-          <p className="fs-5 fw-bold text-light mt-0 mb-2">Get to Know Us</p>
+        <Col className="col-md-2 col-sm-5 col-11 mb-3">
+          <p className="fs-5 fw-bold text-non-links mt-0 mb-2">Get to Know Us</p>
           {RenderGlossaryLinks("Careers")}
           {RenderGlossaryLinks("Blog")}
           {RenderGlossaryLinks("About Niagara")}
@@ -302,8 +300,8 @@ function RenderFooter() {
           {RenderGlossaryLinks("Investor Relations")}
           {RenderGlossaryLinks("Niagara Services", false)}
         </Col>
-        <Col className="col-3 me-5">
-          <p className="fs-5 fw-bold text-light mt-0 mb-2">Begin your Business Ventures with Us</p>
+        <Col className="col-md-3 col-sm-5 col-11 mb-3">
+          <p className="fs-5 fw-bold text-non-links mt-0 mb-2">Begin your Business Ventures with Us</p>
           {RenderGlossaryLinks("Becoming an Affiliate")}
           {RenderGlossaryLinks("Becoming a Products Merchant")}
           {RenderGlossaryLinks("Publishing App Services on our Platform")}
@@ -311,15 +309,15 @@ function RenderFooter() {
           {RenderGlossaryLinks("More Info on Making Money with Us, false")}
           {RenderGlossaryLinks("Niagara Services", false)}
         </Col>
-        <Col className="col-3">
-          <p className="fs-5 fw-bold text-light mt-0 mb-2">Niagara Services</p>
+        <Col className="col-md-3 col-sm-5 col-11 mb-3">
+          <p className="fs-5 fw-bold text-non-links mt-0 mb-2">Niagara Services</p>
           {RenderGlossaryLinks("Niagara Business Card")}
           {RenderGlossaryLinks("Niagara E-Points Shopping")}
           {RenderGlossaryLinks("Top-up your Niagara E-Wallet")}
           {RenderGlossaryLinks("Physical Gift Cards", false)}
         </Col>
-        <Col className="col-3">
-          <p className="fs-5 fw-bold text-light">Let Us Help You/Q&A</p>
+        <Col className="col-md-3 col-sm-5 col-11 mb-3">
+          <p className="fs-5 fw-bold text-non-links">Let Us Help You/Q&A</p>
           {RenderGlossaryLinks("Niagara's Efforts against COVID-19")}
           {RenderGlossaryLinks("Your Accounts")}
           {RenderGlossaryLinks("Your Order History")}
@@ -333,26 +331,30 @@ function RenderFooter() {
       <hr className="border border-2 mt-5" />
 
       {/* Footer Navigation Section */}
-      <Row className="justify-content-center mt-5 mb-0">
-        <Col className="d-flex flex-row align-items-center justify-content-center col-lg-6 col-12 mx-0">
-          <Image src={new URL("./assets/logo.webp", import.meta.url).href} className="me-3" width="85px" />
+      <Row className="justify-content-center mt-4 mb-0">
+        <Col className="d-flex flex-row align-items-center justify-content-center justify-content-lg-end col-lg-6 col-12 mx-0 mb-3">
+          <a href="#">
+            <Image src={new URL("./assets/logo.webp", import.meta.url).href} className="me-3" width="85px" />
+          </a>
           {RenderLanguageDropdown()}
+        </Col>
+        <Col className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start col-lg-6 col-12 mx-0 mb-3">
           {RenderCurrencyDropdown()}
           {RenderCountryDropdown()}
         </Col>
       </Row>
 
-      <hr className="border border-2 mt-5" />
+      <hr className="border border-2 mt-2" />
 
       {/* Footer Copyright Section */}
       <Row className="justify-content-center mt-4 mb-0">
         <Col className="d-flex flex-column align-items-center justify-content-center col-12 mx-0">
           <div>
-            <a href="#" className="footer-text-links me-3" target="_blank" rel="noopener noreferrer">Terms and Condition of Use</a>
-            <a href="#" className="footer-text-links me-3" target="_blank" rel="noopener noreferrer">Privacy Notice</a>
-            <a href="#" className="footer-text-links" target="_blank" rel="noopener noreferrer">Ads Privacy Choice</a>
+            <a href="#" className="text-links me-3" target="_blank" rel="noopener noreferrer">Terms and Condition of Use</a>
+            <a href="#" className="text-links me-3" target="_blank" rel="noopener noreferrer">Privacy Notice</a>
+            <a href="#" className="text-links" target="_blank" rel="noopener noreferrer">Ads Privacy Choice</a>
           </div>
-          <p className="fs-6 text-white">© 2024-2024, Niagara.com, or its affiliates.</p>
+          <p className="fs-6 text-non-links">© 2024-2024, Niagara.com, or its affiliates.</p>
         </Col>
       </Row>
     </Container >
@@ -362,7 +364,7 @@ function RenderFooter() {
 function RenderGlossaryLinks(context, addNewLine = true, link = "#") {
   return (
     <>
-      <a href={link} className="footer-text-links" target="_blank" rel="noopener noreferrer">{context}</a>
+      <a href={link} className="text-links" target="_blank" rel="noopener noreferrer">{context}</a>
       {(addNewLine === true ? <br /> : "")}
     </>
   );
@@ -373,13 +375,13 @@ function App() {
     <>
       <div data-bs-theme="dark" className="page-overlay">
         {/* Header Panels Section */}
-        <div id="nav-panel-group" className="bg-dark w-100">
+        <div id="nav-panel-group" className="header-container w-100">
           {RenderNavPanel()}
         </div>
         {/* Content Body Section */}
         <Container fluid className="d-flex flex-column align-items-center w-100 content-body">
           {/* Title */}
-          <Row className="header-container">
+          <Row>
             <Col className="col-12">
               <div className="mt-3" style={{ width: "55vw" }}>
                 <p className="fs-3 fw-bold w-30 text-center">
@@ -392,7 +394,7 @@ function App() {
             </Col>
           </Row>
           {/* Catalogues - Hot Sales Event */}
-          <Row className="justify-content-center mb-5" style={{ width: "70%", marginTop: "16%" }}>
+          <Row className="justify-content-center mb-5" style={{ width: "70%" }}>
             {RenderProductGrid()}
           </Row>
           {/* Catalogues - Banner #1 */}
@@ -410,10 +412,11 @@ function App() {
         </Container>
         {/* Pre-Footer (Return to Top) Section */}
         <div className="d-flex flex-row justify-content-center pre-footer-container">
-          <Button variant="secondary" onClick={() => window.scrollTo({ top: 0, left: 0, behaviour: "smooth" })} className="w-100 pre-footer-button">Return to Top</Button>
+          <button onClick={() => window.scrollTo({ top: 0, left: 0, behaviour: "smooth" })}
+            className="w-100 text-links-button pre-footer-button">Return to Top</button>
         </div>
         {/* Footer Section */}
-        <div className="bg-dark w-100 pb-3">
+        <div className="w-100 pb-3 footer-container">
           {RenderFooter()}
         </div>
       </div >

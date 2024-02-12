@@ -1,6 +1,56 @@
 /* ============================== */
+
+.text-non-links {
+    text-decoration: none;
+    color: #f8f4ec;
+}
+
+.text-links {
+    text-decoration: none;
+    color: #f4aeba;
+}
+
+.text-links:hover {
+    text-decoration: underline;
+}
+
+.text-links-button {
+    text-decoration: none;
+    color: #402b3a;
+}
+
+.text-links-button:hover {
+    text-decoration: underline;
+}
+
+.horizontal-line-text {
+    color: #ec729c;
+}
+
+.text-links-banner-button {
+    text-decoration: none;
+    color: #ec729c;
+}
+
+.text-links-banner-button:hover {
+    text-decoration: underline;
+    color: #ec729c;
+}
+
+.dropdown-options-container {
+    background-color: #15292b;
+    border-color: #15292b;
+}
+
+/* ============================== */
+
+.header-container {
+    background-color: #d63484;
+}
+
+/* ============================== */
 .content-body {
-    background-color: #ffd1dc;
+    background-color: #fed9da;
     background-image: url("./assets/valentines-day-poster.webp");
     background-repeat: no-repeat;
     background-position: top center;
@@ -10,7 +60,7 @@
 /* ============================== */
 
 .top-seller-container {
-    border: solid 1px #CCCDCE;
+    border: solid 1px #f4aeba;
     background-color: white;
 }
 
@@ -18,14 +68,23 @@
 
 .card-container-product {
     border-radius: 30px;
+    border-color: #f4aeba;
 }
 
 .card-thumbnail-product {
     border-radius: 30px;
+    border-color: #f4aeba;
+}
+
+.card-cart-button-product {
+    background-color: #c54c82;
+    color: #f8f4ec;
+    border-color: #c54c82;
 }
 
 .card-container-banner {
     border-radius: 10px;
+    border-color: #f4aeba;
 }
 
 .card-title-banner {
@@ -57,7 +116,7 @@
 }
 
 .pre-footer-button {
-    background-color: #D63585;
+    background-color: #ff9bd2;
     border: none;
     margin: 0px;
     padding-top: 15px;
@@ -65,18 +124,19 @@
 }
 
 .pre-footer-button:hover {
+    color: #ff9bd2;
     background-color: #485769;
+}
+
+.pre-footer-button:active {
+    background-color: #ff9bd2;
+    color: #402b3a;
 }
 
 /* ============================== */
 
-.footer-text-links {
-    text-decoration: none;
-    color: white;
-}
-
-.footer-text-links:hover {
-    text-decoration: underline;
+.footer-container {
+    background-color: #d63484;
 }
 
 /* ============================== */
