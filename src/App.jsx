@@ -267,7 +267,7 @@ function RenderProductCarouselItem(startIndex, itemIndex) {
     const itemFullImageSrcPath = "./assets/" + catalogueItem.src;
 
     rowItems.push(
-      <Col id={`carousel-item-${i}`} className="col-2 mx-0 px-0">
+      <Col id={`carousel-item-element-${i}`} key={`carousel-item-element-${i}`} className="col-2 mx-0 px-0">
         <a href="#">
           <Image className="mx-0" width="100%" height="auto"
             src={new URL(itemFullImageSrcPath, import.meta.url).href} />
@@ -277,7 +277,7 @@ function RenderProductCarouselItem(startIndex, itemIndex) {
   }
 
   return (
-    <Carousel.Item id={`carousel-item-${itemIndex}`}>
+    <Carousel.Item id={`carousel-item-${itemIndex}`} key={`carousel-item-${itemIndex}`}>
       <Row className="d-flex w-100 justify-content-evenly">
         {rowItems}
       </Row>
